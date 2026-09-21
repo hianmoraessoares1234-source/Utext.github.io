@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Livro — Utext</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+  <header>
+    <div class="addup"><marquee behavior="scroll" direction="left"><i>Participe agora no sorteio e ganhe gratuitamente a edição Especial de Boa Noite I</i></marquee></div>
+    <div class="menu">
+      <nav>
+        <ul>
+          <a href="index.html"><img class="icon" src="img/logoslim.png" alt=""></a>
+          <li><a href="index.html">Sobre nós</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="loja.html">Loja</a></li>
+        </ul>
+      </nav>
+      <div class="search-container">
+        <button class="search-toggle" aria-label="Abrir pesquisa"><i class="fas fa-search"></i></button>
+        <div class="searchbar" role="search" aria-label="Barra de pesquisa">
+          <input id="site-search" type="search" placeholder="Pesquisar tópicos, categorias ou livros..." aria-label="Pesquisar">
+          <button id="clear-search" class="clear-btn" aria-label="Limpar pesquisa"></button>
+          <ul id="search-suggestions" class="suggestions" role="listbox" aria-label="Sugestões"></ul>
+        </div>
+      </div>
+      <div class="menu-actions">
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Abrir carrinho">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+    <aside id="cart">
+    <div class="cart-header">
+      <h3>Seu Carrinho</h3>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Fechar">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-total"><span>Total</span><span id="cart-total">€ 0,00</span></div>
+    <div style="margin-top:10px;display:flex;gap:8px">
+      <button class="btn" onclick="checkout()">Finalizar compra</button>
+      <button class="btn secondary" onclick="clearCart()">Limpar</button>
+    </div>
+  </aside>
+  <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()" aria-hidden="true"></div>
+  </header>
+  <div class="cb"></div>
+  <main class="book-page">
+    <div class="book-layout">
+      <section class="media">
+        <div class="carousel">
+          <button class="arrow left" id="prev" aria-label="Anterior"><h1>‹</h1></button>
+          <div class="stage" id="stage">
+            <img id="mainImage" src="" alt="Capa do livro">
+            <div id="lens" class="img-zoom-lens"></div>
+          </div>
+          <button class="arrow right" id="next" aria-label="Próximo"><h1>›</h1></button>
+        </div>
+        <div class="thumbnails" id="thumbnails" aria-hidden="false"></div>
+      </section>
+
+      <aside class="details">
+        <h1 id="title">Título do livro</h1>
+        <p id="price" class="price">€ 0,00</p>
+        <p id="description" class="desc">Descrição breve do livro.</p>
+
+        <div class="meta-row">
+          <div class="badge" id="category">Categoria</div>
+          <div class="badge" id="publisher">Editora</div>
+          <div class="badge" id="pages">-- págs</div>
+        </div>
+
+        
+
+        <div class="rating" id="rating">Avaliação: <span id="ratingStars"></span> <span id="ratingValue" class="muted"></span></div>
+
+        <div class="actions">
+          <a id="buyLink" class="btn primary" target="_blank" rel="noopener">Comprar</a>
+          <a id="siteLink" class="link-site" target="_blank" rel="noopener">Site do livro</a>
+        </div>
+
+        
+      </aside>
+    </div>
+
+    <section class="author-area" style="max-width:1100px;margin:18px auto;padding:0 18px;">
+      
+      <div class="related">
+        <h3>Produtos relacionados</h3>
+        <div id="relatedBooks" class="related-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape-estruturado">
+    <div class="rodape-conteudo">
+        <div class="rodape-coluna">
+        <h3>Navegação</h3>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre_nos.html">Sobre Nós</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        </div>
+        <div class="rodape-coluna">
+        <h3>Fale Conosco</h3>
+        <p>Email: Utext@gmail.com</p>
+        <p>Telefone: 968 493 319</p>
+        <p>Instagram: Utext</p>
+        </div>
+        <div class="rodape-coluna">
+        <h3>Redes Sociais</h3>
+        <div class="rodape-sociais">
+        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="https://www.instagram.com/thebook_boanoite/"></i></a>
+        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        </div>
+    </div>
+    <hr class="rodape-linha">
+    <div class="rodape-final">
+        <p class="rodape-copyright">&copy; 2025 Utext. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="search.js" defer></script>
+  <script src="book.js" defer></script>
+</body>
+</html>
